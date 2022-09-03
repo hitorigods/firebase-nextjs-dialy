@@ -1,3 +1,44 @@
+Firebase Hosting へのデプロイ
+デプロイは今すぐ行うことも、後で行うこともできます。今すぐデプロイするには、ターミナル ウィンドウを開き、ウェブアプリのルート ディレクトリに移動するか、ルート ディレクトリを作成します。
+
+Google へのログイン
+
+```
+firebase login
+```
+
+プロジェクトの開始
+このコマンドはアプリのルート ディレクトリから実行してください:
+
+```
+firebase init
+```
+
+firebase.json でサイトを指定する
+firebase.json 構成ファイルにサイト ID を追加してください。設定が完了したら、マルチサイト デプロイメントのベスト プラクティスをご覧ください。
+
+```
+{
+  "hosting": {
+    "site": "fir-nextjs-dialy",
+
+    "public": "public",
+    ...
+  }
+}
+```
+
+準備ができたらウェブアプリをデプロイ
+静的ファイル（HTML、CSS、JS など）をアプリのデプロイ ディレクトリ（デフォルトは「public」）に配置します。続いて、アプリのルート ディレクトリで次のコマンドを実行します:
+
+```
+firebase deploy --only hosting:fir-nextjs-dialy
+```
+
+デプロイ後、アプリを fir-nextjs-dialy.web.app で表示します。
+
+お困りの場合は、Hosting のドキュメントをご覧ください。
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
